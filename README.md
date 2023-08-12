@@ -1,5 +1,5 @@
 ### Uicket
-Uicket is simple app to watch movies. Couldn't be possible if not (this)[https://github.com/SuperZombi/HdRezkaApi] API
+Uicket is simple app to watch movies. Couldn't be possible if not [this](https://github.com/SuperZombi/HdRezkaApi) API
 ##### Warning!
 Low Quality Code!
 #### Installing && Setup
@@ -17,9 +17,10 @@ Create movies.txt with following schema:
 movie name$url
 movie name$url
 ```
-Run `dbgen.py`.
-Open Uicket
-Press `S`
+Run `dbgen.py`, 
+Open Uicket, 
+Press `S`, 
+Enter path to DB, 
 Click `Apply` and wait
 
 #### License
