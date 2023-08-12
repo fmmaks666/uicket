@@ -14,7 +14,8 @@
 		"next": "Next",
 		"not_found": "Not found",		
 		"add": "Add to Favorites",
-		"remove": "Remove from Favorites"
+		"remove": "Remove from Favorites",
+		"no_result": "Nothing to see here..."
 
 	},
 
@@ -33,6 +34,7 @@
 		"next": "Далі",
 		"not_found": "Не знайдено",
 		"add": "Додати до Улюблених",
-		"remove": "Видалити з Улюблених"
+		"remove": "Видалити з Улюблених",
+		"no_result": "Тут нічого немає..."
 	}
 }

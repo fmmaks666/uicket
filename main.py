@@ -1,3 +1,4 @@
+# fmmaks, You should make better structure for Uicket!!!!!!!!!!!!!
 from textual import on
 from textual.app import App, ComposeResult
 from textual.widgets import Header, Footer, Button, Input, RadioButton, Label, RadioSet, Static, Select
@@ -139,7 +140,7 @@ class ReleasesList(Screen):
 					release_id, name, url = i
 					yield Release(release_id, name, url) 
 			else:
-				yield Label("Nothing to see here...")
+				yield Label(self.app.s("no_result"))
 		
 		yield Button(self.app.s("back"), id="back")
 
