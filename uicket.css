@@ -1,0 +1,92 @@
+Input {
+	width: auto;
+	border: round #07c2f5
+}
+
+Label {
+	
+}
+
+Button {
+	border: round #07c2f5
+}
+
+Horizontal {
+	height: 12%;
+	width: auto
+}
+
+Select {
+	height: 50%;
+	width: 70
+}
+
+SeasonPopup > Select {
+	height: 40%;
+	width: 70
+}
+
+Config {
+	align: center middle
+}
+
+Release {
+	border: round $primary;
+	width: auto;
+	height: auto;
+	text-align: center
+}
+
+Release > Button {
+	width: auto
+}
+
+Release > Label {
+	width: auto;
+	height: auto;
+	text-align: center
+}
+
+LanguageSwitcher {
+	border: round $primary;
+	padding: 5
+}
+
+ReleasesList {
+	align: center middle
+}
+
+ReleasesList > VerticalScroll {
+	align: center middle
+}
+
+ReleasePage #back {
+	border: round $secondary;
+}
+
+ReleasePage > Label {
+	text-style: bold
+}
+
+#favorites {
+	color: orange;
+	border: double #D439D4
+}
+
+#favorites_button {
+	border: round yellow
+}
+
+#config {
+	border: double blue;
+	height: 8%
+}
+
+#apply {
+	 border: round
+}
+
+Screen {
+	align: center middle;
+	border: round $primary;
+}
