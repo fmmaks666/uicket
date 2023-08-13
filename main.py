@@ -306,17 +306,21 @@ class Database:
 		return self._cursor.execute(self.get_many_query.format(amount), values).fetchall()
 		
 	
-	def get_all(self):
+	def get_all(self, no_fetch=False):
 		if self._cursor is None:
 			return None
-			
-		return self._cursor.execute("SELECT * FROM releases").fetchall()
-		
+
+		data = self._cursor.execute("SELECT * FROM releases")
+
+		if not no_fetch:
+			data.fetchall()
+
+		return data
 
 class Search:
 
 	def __init__(self):
-		self.schema = schema = Schema(id=ID(stored=True, unique=True), name=TEXT(stored=True), url=TEXT(stored=True))
+		self.schema = Schema(id=ID(stored=True, unique=True), name=TEXT(stored=True), url=TEXT(stored=True))
 		self.index = None
 		self.path = path.join(PATH, "index")
 		
@@ -344,13 +348,12 @@ class Search:
 			
 		makedirs(self.path)
 		self.index = create_in(self.path, self.schema)
-		data = db.get_all()
+		data = db.get_all(True)
 		if data is None:
 			return
 			
-		for row in data:
+		for release_id, name, url in data:
 			writer = self.index.writer()
-			release_id, name, url = row
 			writer.add_document(id=str(release_id), name=name, url=url)
 			writer.commit()
 		
