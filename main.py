@@ -356,8 +356,6 @@ class Search:
 			for release_id, name, url in data:
 				writer.add_document(id=str(release_id), name=name, url=url)
 
-			writer.commit()
-		
 
 class LanguageSwitcher(ModalScreen):
 	
