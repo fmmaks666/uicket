@@ -351,10 +351,11 @@ class Search:
 		data = db.get_all(True)
 		if data is None:
 			return
-			
-		for release_id, name, url in data:
-			writer = self.index.writer()
-			writer.add_document(id=str(release_id), name=name, url=url)
+
+		with self.index.writer() as writer:
+			for release_id, name, url in data:
+				writer.add_document(id=str(release_id), name=name, url=url)
+
 			writer.commit()
 		
 

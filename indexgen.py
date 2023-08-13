@@ -28,11 +28,12 @@ def create(data, highest):
 	index = create_in(path, schema)
 	if not data:
 		exit()
+	
+	with index.writer() as writer:		
+		for release_id, name, url in data:
+			writer.add_document(id=str(release_id), name=name, url=url)
+			print(f"{release_id / highest * 100}%")
 		
-	for release_id, name, url in data:
-		writer = index.writer()
-		writer.add_document(id=str(release_id), name=name, url=url)
-		print(f"{release_id / highest * 100}%")
 		writer.commit()
 		
 		
