@@ -340,7 +340,7 @@ class Search:
 			
 	def create(self, db: Database):
 		if Path(self.path).exists():
-			shutil.rmtree(self.path, ignore_errors=True)
+			rmtree(self.path, ignore_errors=True)
 			
 		makedirs(self.path)
 		self.index = create_in(self.path, self.schema)
